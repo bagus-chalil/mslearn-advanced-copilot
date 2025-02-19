@@ -31,6 +31,14 @@ def countries():
     return list(data.keys())
 
 
+@app.get('/countries/{country}/cities')
+def cities(country: str):
+    """
+    Returns a list of cities for a given country/region.
+    """
+    return list(data[country].keys())
+
+
 @app.get('/countries/{country}/{city}/{month}')
 def monthly_average(country: str, city: str, month: str):
     return data[country][city][month]
