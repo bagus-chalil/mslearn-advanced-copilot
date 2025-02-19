@@ -1,0 +1,26 @@
+# Apply advanced GitHub Copilot techniques
+Discover new ways to leverage advanced GitHub Copilot techniques within a Python repository to implement an interactive HTML form and an Application Programming Interface (API) endpoint. 
+Gain more practical experience by using this repository that contains a Python Web Application that hosts a Travel Weather API.
+
+## Requirements
+
+1. Enable your [GitHub Copilot service](https://github.com/github-copilot/signup)
+2. Open [this repository with Codespaces](https://codespaces.new/MicrosoftDocs/mslearn-copilot-codespaces-python)
+
+## 💪🏽 Exercise
+The current API is not exposing country/{country} which needs to be implemented to list cities. The route should allow only GET HTTP requests with a JSON response providing information from the historical high and low for that country, city, and given month.
+
+As with any implementation, this addition should include at least one test function to work with the pytest runner and test framework. 
+
+### 🛠 Step 1: Add a new route 
+On our first exercise we will create a new route in our API. Go to the main.py file, and by using the inline chat with the following command `ctrl` + `i` (on Windows) or  `cmd` + `i`(on Mac) ask GitHub Copilot to help you create a new API that shows you the cities of a country. 
+
+`> Create a new route that exposes the cities of a country.`
+
+This prompt should give you something similar like this:
+
+```python
+# Create a new route that exposes the cities of a country:
+@app.get('/countries/{country}')
+def cities(country: str):
+    return list(data[country].keys())
